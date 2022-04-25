@@ -15,6 +15,7 @@ public class StoreService {
     public static HashMap<Integer, String> loginList = new HashMap<Integer, String>();
     public static HashMap<Integer, MainHome> openList = new HashMap<Integer, MainHome>(); 
     public static HashMap<Integer, Integer> portList = new HashMap<Integer, Integer>();
+    public static HashMap<Integer, String> ipList = new HashMap<Integer, String>();
     
     public static final int LOGIN_OK = 1;
     public static final int PWD_DISAGREE = 2;
@@ -33,6 +34,7 @@ public class StoreService {
         openList.put(st_no, mainHome);
         MainHome mh = mainHome;
         portList.put(st_no, 7000+mh.getStno());
+        ipList.put(st_no, mh.getIp().getHostAddress());
     }
     public static void closeStore(int st_no){
         openList.remove(st_no);
