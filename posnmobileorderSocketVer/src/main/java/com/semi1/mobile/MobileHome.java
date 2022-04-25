@@ -2672,7 +2672,7 @@ public class MobileHome extends javax.swing.JFrame {
     private class SocketReady extends Thread{
         public void run(){
             try{
-                Socket socket = new Socket("192.168.0.66",7000+mh.getStno());
+                Socket socket = new Socket(StoreService.ipList.get(mh.getStno()),7000+mh.getStno());
                 
                 DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
                 dos.write(1);
@@ -2683,25 +2683,4 @@ public class MobileHome extends javax.swing.JFrame {
             }
         }
     }
-    /*
-    private class SocketReceiver extends Thread{
-        Socket socket;
-        DataInputStream dis;
-        public SocketReceiver(Socket socket){
-            this.socket = socket;
-            try{
-                dis = new DataInputStream(socket.getInputStream());
-            }catch(IOException ex){
-                ex.printStackTrace();
-            }
-        }
-        public void run(){
-      
-            while(dis!=null){
-                JOptionPane.showMessageDialog(mh, "모바일 오더가 들어왔습니다");
-
-            }
-
-        }
-    }*/
 }
