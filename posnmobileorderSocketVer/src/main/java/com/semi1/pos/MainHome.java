@@ -1692,6 +1692,7 @@ public class MainHome extends javax.swing.JFrame {
                         dis.read();
                         JOptionPane.showMessageDialog(mh, "모바일 오더가 들어왔습니다");
                         showOding();
+			dis = null;
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(MainHome.class.getName()).log(Level.SEVERE, null, ex);
