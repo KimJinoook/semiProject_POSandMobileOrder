@@ -2676,6 +2676,8 @@ public class MobileHome extends javax.swing.JFrame {
                 
                 DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
                 dos.write(1);
+                dos.close();
+                socket.close();
                 
                 
             } catch (IOException ex) {
